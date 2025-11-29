@@ -76,5 +76,5 @@ PCB图片：
 
 ChisFlash_MBCX
 
-[ChisFlash_MBCX](ChisFlash-MBCX/picture/ChisFlash_MBCX.png)
+![ChisFlash_MBCX](https://github.com/moribaka/ChisFlash-MBCX/blob/06e9a3898dc6bdd9411a47e4bd35d64ad5d7ee9c/picture/ChisFlash_MBCX.png)
 
