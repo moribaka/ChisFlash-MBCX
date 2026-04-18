@@ -4,8 +4,6 @@
 
 [简体中文](README.md) | English
 
-Docs: [docs/README.md](docs/README.md) | Notice: [NOTICE.md](NOTICE.md)
-
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 ![Platform: GB/GBC](https://img.shields.io/badge/Platform-GB%20%2F%20GBC-4f8bff.svg)
 [![Open Source Hardware](https://img.shields.io/badge/OSHWHub-Project-orange.svg)](https://oshwhub.com/morinaka/chisflash-cqz)
@@ -28,13 +26,6 @@ According to the original project notes, the board can switch between these two 
 - Useful for retro cartridge building, study, and community-driven hardware reproduction
 - OSHWHub project page is available for BOM and assembly reference
 
-## Repository Status
-
-- The repository is now suitable for GitHub-style presentation and artifact distribution
-- Existing release artifacts stay in their original paths: `gerber/`, `pcb/`, `pof/`, `mcu/`, and `picture/`
-- New `docs/`, `hardware/`, and `firmware/` sections were added to make room for future BOM files, validation notes, and source projects
-- This keeps existing download links stable while moving the repository toward a more complete open hardware layout
-
 ## Quick Links
 
 - OSHWHub page: [oshwhub.com/morinaka/chisflash-cqz](https://oshwhub.com/morinaka/chisflash-cqz)
@@ -45,15 +36,6 @@ According to the original project notes, the board can switch between these two 
 - Rumble CPLD firmware: [pof/CPLD_ChisFlash_MBCX_Motor.pof](pof/CPLD_ChisFlash_MBCX_Motor.pof)
 - RTC MCU firmware: [mcu/MCU_ChisFlashRTC.hex](mcu/MCU_ChisFlashRTC.hex)
 
-## Documentation Index
-
-- Docs portal: [docs/README.md](docs/README.md)
-- Assembly and programming notes: [docs/assembly.md](docs/assembly.md)
-- BOM and parts status: [docs/bom.md](docs/bom.md)
-- Testing and validation notes: [docs/testing.md](docs/testing.md)
-- Licensing notes: [docs/licensing.md](docs/licensing.md)
-- Repository layout and future source tree: [docs/source-layout.md](docs/source-layout.md)
-
 ## Repository Layout
 
 | Path | Description |
@@ -63,9 +45,6 @@ According to the original project notes, the board can switch between these two 
 | `pof/` | CPLD firmware for RTC / rumble modes |
 | `mcu/` | MCU firmware for the RTC version |
 | `picture/` | Images and project assets |
-| `docs/` | Project docs, assembly notes, validation notes, licensing notes |
-| `hardware/` | Normalized structure notes for future hardware source and releases |
-| `firmware/` | Normalized structure notes for future firmware source and releases |
 
 ## Modes
 
@@ -93,7 +72,6 @@ According to the original project notes, the board can switch between these two 
 ## Licensing and Attribution
 
 - This repository currently includes a [GPL-3.0](LICENSE) license file.
-- To make the repository easier to understand without changing the bundled license text, this repo also includes [NOTICE.md](NOTICE.md) and [docs/licensing.md](docs/licensing.md).
 - The original project notes also request the following attribution when the project is sold by individual makers:
 
 ```text
@@ -101,8 +79,6 @@ Thanks to 兜鬼巨神兵（CQZ） for development and open-sourcing, and thanks
 ```
 
 - For commercial use, the original author requests that you contact `兜鬼巨神兵 (CQZ)` for authorization first.
-
-> Note: This summary is meant to help GitHub readers understand the current repository presentation. It does not replace the `LICENSE` text and is not legal advice.
 
 ## Community Links
 
