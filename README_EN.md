@@ -78,7 +78,7 @@ According to the original project notes, the board can switch between these two 
 Thanks to 兜鬼巨神兵（CQZ） for development and open-sourcing, and thanks to the chis team for their contribution.
 ```
 
-- For commercial use, the original author requests that you contact `兜鬼巨神兵 (CQZ)` for authorization first.
+- If you plan commercial products based on this project, it is recommended to contact `兜鬼巨神兵 (CQZ)` first for coordination.
 
 ## Community Links
 
