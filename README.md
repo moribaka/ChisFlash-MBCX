@@ -1,80 +1,111 @@
-嘉立创开源地址： https://oshwhub.com/morinaka/chisflash-cqz
+# ChisFlash-MBCX
 
+> 一块面向 Game Boy / Game Boy Color 的单卡方案。通过烧录不同的 CPLD 固件，可在 `MBC3 RTC` 与 `MBC5 震动` 两种模式之间切换。
 
-小时候用棉被裹着台灯在被窝里玩金银，那个时候口袋妖怪还没叫宝可梦，图鉴里也只有息息和肥大，以及满世界逃跑的水君他们。游戏里昼夜变化，主人公在草地里抓了一波又一波的宝可梦，我现实也是在被窝和学校两头跑，悠闲地度过一天又一天。如今我也三十出头了，玩宝可梦不用在被窝里捂一身汗，虽然偶尔刷刷视频能看到大家刷息息的汉化梗，但我知道它其实叫凤王。
+简体中文 | [English](README_EN.md)
 
-在各种机缘巧合下，我认识了林面包，我画板子他写程序，我们搞了ChisFlash那么一个项目出来，接着就像当初取名的“普罗米修斯”一样，ChisFlash1.0作为“借”来的那一撮小火苗，吸引了很多愿意为复古社区贡献的大佬和热爱复古游戏的玩家，随之出现时钟卡、震动卡、合卡甚至虚拟铁电这样的妖艳之物，烧录器也更新了几款，从最初250K每秒的烧录速度暴涨到了800K每秒这样的一个夸张的数字。ChisFlash这团小火焰，已经变成了大家的篝火。
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+![Platform: GB/GBC](https://img.shields.io/badge/Platform-GB%20%2F%20GBC-4f8bff.svg)
+[![Open Source Hardware](https://img.shields.io/badge/OSHWHub-Project-orange.svg)](https://oshwhub.com/morinaka/chisflash-cqz)
 
-这时我们回过头看，好像还差点什么东西？
+![ChisFlash_MBCX](picture/ChisFlash_MBCX.png)
 
-没错，那就是GBC时钟卡。曾经游玩的盗版卡或许是ROM打了FTC补丁，步数代替时钟。但现在新汉化的ROM是没打过补丁的，而且没找到GBC使用的FTC补丁，不知道是不是我没找对。但总而言之，为了体验“完全体”中文化的宝可梦金银，我们把MBC3时钟卡搓了出来。
+## 项目简介
 
-这个项目由兜鬼巨神兵大佬开发，由我代发。项目正式名称为：ChisFlash-MBCX（单卡）。靠着刷不同的两个固件，可切换MBC3时钟单卡和MBC5震动单卡。兜鬼大佬精准还原了MBC3时钟的寄存器，在RTC测试中达到全绿通过。
+`ChisFlash-MBCX` 是 ChisFlash 系列中的单卡项目，主要用于实现：
 
-RTC测试1RTC测试2
+- `MBC3 RTC` 时钟单卡
+- `MBC5` 震动单卡
 
- 
+项目由 `兜鬼巨神兵（CQZ）` 开发，由 `mori` 代为整理与发布。根据仓库现有说明，这块板通过刷写不同的固件即可在两种用途之间切换；其中 RTC 版本对 MBC3 时钟寄存器做了还原，并通过了 RTC 相关测试。
 
-自制方法很简单：
+## 项目亮点
 
-按照焊接辅助的bom表购买材料并焊接（推荐用插件晶振，温漂更小，更精准）
-烧录cpld固件（MBC3时钟或者MBC5震动二选一）
-时钟卡需要焊接单片机和时钟芯片，并且通过SWD或者TTL烧录单片机固件
-震动卡可以不焊接单片机和时钟。以免浪费电力。
-注意电池左下方有个电阻，需要焊接。否则电池不供电。
- 
+- 一套 PCB，支持两种常用方案切换
+- 提供 `Gerber`、`PCB 工程`、`CPLD 固件` 与 `MCU 固件`
+- 适合复古游戏卡带爱好者自制、研究与二次开发
+- 提供嘉立创开源页面，便于查看焊接辅助与 BOM 信息
 
-2025年11月18日 更新：
+## 快速导航
 
-       新增一颗0Ω电阻用于改铁电用。
+- 嘉立创开源页面：[oshwhub.com/morinaka/chisflash-cqz](https://oshwhub.com/morinaka/chisflash-cqz)
+- PCB 图片：[picture/ChisFlash_MBCX.png](picture/ChisFlash_MBCX.png)
+- Gerber 文件：[gerber/Gerber_ChisFlash-MBCX-CQZ_2025-11-29.zip](gerber/Gerber_ChisFlash-MBCX-CQZ_2025-11-29.zip)
+- PCB 工程：[pcb/ProDoc_ChisFlash-MBCX-CQZ_2025-11-29.epro](pcb/ProDoc_ChisFlash-MBCX-CQZ_2025-11-29.epro)
+- RTC 版 CPLD 固件：[pof/CPLD_ChisFlash_MBCX_RTC.pof](pof/CPLD_ChisFlash_MBCX_RTC.pof)
+- 震动版 CPLD 固件：[pof/CPLD_ChisFlash_MBCX_Motor.pof](pof/CPLD_ChisFlash_MBCX_Motor.pof)
+- RTC 版 MCU 固件：[mcu/MCU_ChisFlashRTC.hex](mcu/MCU_ChisFlashRTC.hex)
 
-       1.使用sram则焊接0Ω；
+## 仓库结构
 
-       2.使用铁电则不焊接0Ω，短接二极管和电阻焊盘。
+| 路径 | 内容 |
+| --- | --- |
+| `gerber/` | 生产用 Gerber 压缩包 |
+| `pcb/` | PCB 原始工程文件 |
+| `pof/` | CPLD 固件，分别对应 RTC / 震动版本 |
+| `mcu/` | RTC 版本使用的 MCU 固件 |
+| `picture/` | 项目图片与展示素材 |
 
+## 模式说明
 
+| 模式 | 对应文件 | 是否需要 MCU / 时钟芯片 | 说明 |
+| --- | --- | --- | --- |
+| `MBC3 RTC` 时钟单卡 | `pof/CPLD_ChisFlash_MBCX_RTC.pof` + `mcu/MCU_ChisFlashRTC.hex` | 需要 | 用于 RTC 功能卡带 |
+| `MBC5` 震动单卡 | `pof/CPLD_ChisFlash_MBCX_Motor.pof` | 不需要 | 可不焊 MCU 和时钟芯片，以减少不必要耗电 |
 
- 
+## 自制流程
 
-本项目遵照兜鬼大佬的意愿，开源PCB，开放固件下载。大家可以随意制作。个人卖家售卖的时候，请标准鸣谢字样：感谢兜鬼巨神兵（CQZ）的开发并开源，感谢chis团队贡献。
+1. 按照嘉立创开源页面中的焊接辅助 / BOM 准备材料并完成焊接。
+2. 烧录对应的 CPLD 固件，在 `RTC` 与 `震动` 两种模式中二选一。
+3. 如果制作 RTC 版本，还需要焊接单片机与时钟芯片，并通过 `SWD` 或 `TTL` 烧录 MCU 固件。
+4. 如果制作震动版本，可以不焊接单片机和时钟芯片，避免额外耗电。
+5. 注意电池左下方的电阻需要焊接，否则电池不会供电。
 
- 
+> 建议使用插件晶振，温漂更小，时间精度更稳定。
 
-如需商业化，请联系兜鬼大佬获得授权。
+## 2025-11-18 更新
 
- 
+- 新增一颗 `0Ω` 电阻，用于铁电改装
+- 使用 `SRAM` 时，焊接 `0Ω`
+- 使用铁电时，不焊接 `0Ω`，改为短接二极管和电阻焊盘
 
-对复古游戏机和烧录卡的复刻制作有兴趣的，可以加Q群： 771688226 一起讨论。
+## 项目背景
 
- 
+<details>
+<summary>点击展开项目缘起</summary>
 
-鸣谢：
+这个项目最初的出发点很简单：想做一张真正适合 GBC 中文化《宝可梦 金 / 银》体验的时钟卡。
 
-兜鬼巨神兵（CQZ）
+早年的一些盗版卡方案，可能会依赖 ROM 补丁，用步数代替 RTC；但在新的汉化 ROM 场景里，这种方式并不总是成立。于是，围绕 ChisFlash 这条已经逐渐成熟的路线，我们把 `MBC3 RTC` 这块拼图补了上去。
 
-https://space.bilibili.com/371016269
+这也是 ChisFlash 系列自然延伸出来的一步。从最早的烧录器，到后来逐渐出现的时钟卡、震动卡、合卡以及更多复古社区的自制方案，这个项目更像是大家一起把一撮小火苗养成篝火的过程。
 
- 
+</details>
 
-林面包（chisbread）：
+## 开源与授权
 
-https://oshwhub.com/chisbread/works
+- 本项目开放 `PCB` 与固件下载，欢迎个人制作、学习研究和社区交流。
+- 仓库当前附带许可证文件：[GPL-3.0](LICENSE)
+- 根据原说明，个人卖家售卖时请保留以下鸣谢字样：
 
-https://space.bilibili.com/811896
+```text
+感谢兜鬼巨神兵（CQZ）的开发并开源，感谢 chis 团队贡献。
+```
 
- 
+- 如需商业化，请先联系 `兜鬼巨神兵（CQZ）` 获取授权。
 
-mori（爱折腾的mori）
+## 社群与相关链接
 
-https://oshwhub.com/morinaka/works
+- QQ 交流群：`771688226`
+- 嘉立创开源页面：[oshwhub.com/morinaka/chisflash-cqz](https://oshwhub.com/morinaka/chisflash-cqz)
+- CQZ Bilibili：[space.bilibili.com/371016269](https://space.bilibili.com/371016269)
+- chisbread 作品页：[oshwhub.com/chisbread/works](https://oshwhub.com/chisbread/works)
+- chisbread Bilibili：[space.bilibili.com/811896](https://space.bilibili.com/811896)
+- mori 作品页：[oshwhub.com/morinaka/works](https://oshwhub.com/morinaka/works)
+- mori Bilibili：[space.bilibili.com/1825944](https://space.bilibili.com/1825944)
 
-https://space.bilibili.com/1825944
+## 鸣谢
 
-
-
-PCB图片：
-
-ChisFlash_MBCX
-
-![ChisFlash_MBCX](https://github.com/moribaka/ChisFlash-MBCX/blob/06e9a3898dc6bdd9411a47e4bd35d64ad5d7ee9c/picture/ChisFlash_MBCX.png)
-
+- `兜鬼巨神兵（CQZ）`：项目开发与开源
+- `林面包（chisbread）`：ChisFlash 相关协作与社区贡献
+- `mori`：项目整理、代发与资料归档
