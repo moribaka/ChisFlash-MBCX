@@ -4,6 +4,8 @@
 
 简体中文 | [English](README_EN.md)
 
+文档中心：[docs/README.md](docs/README.md) | 授权说明：[NOTICE.md](NOTICE.md)
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 ![Platform: GB/GBC](https://img.shields.io/badge/Platform-GB%20%2F%20GBC-4f8bff.svg)
 [![Open Source Hardware](https://img.shields.io/badge/OSHWHub-Project-orange.svg)](https://oshwhub.com/morinaka/chisflash-cqz)
@@ -26,6 +28,13 @@
 - 适合复古游戏卡带爱好者自制、研究与二次开发
 - 提供嘉立创开源页面，便于查看焊接辅助与 BOM 信息
 
+## 仓库状态
+
+- 当前仓库已经适合 GitHub 展示和资料分发
+- 现有发布产物仍保留在原始路径：`gerber/`、`pcb/`、`pof/`、`mcu/`、`picture/`
+- 新增了 `docs/`、`hardware/`、`firmware/` 三层说明结构，用于承接后续补充的 BOM、测试资料和源码工程
+- 这样处理的目的是在不打断现有下载链接的前提下，让仓库逐步向完整开源硬件项目靠拢
+
 ## 快速导航
 
 - 嘉立创开源页面：[oshwhub.com/morinaka/chisflash-cqz](https://oshwhub.com/morinaka/chisflash-cqz)
@@ -36,6 +45,15 @@
 - 震动版 CPLD 固件：[pof/CPLD_ChisFlash_MBCX_Motor.pof](pof/CPLD_ChisFlash_MBCX_Motor.pof)
 - RTC 版 MCU 固件：[mcu/MCU_ChisFlashRTC.hex](mcu/MCU_ChisFlashRTC.hex)
 
+## 文档索引
+
+- 文档门户：[docs/README.md](docs/README.md)
+- 组装与烧录说明：[docs/assembly.md](docs/assembly.md)
+- BOM 与材料说明：[docs/bom.md](docs/bom.md)
+- 测试与验证记录：[docs/testing.md](docs/testing.md)
+- 授权与项目声明：[docs/licensing.md](docs/licensing.md)
+- 仓库结构与未来源码布局：[docs/source-layout.md](docs/source-layout.md)
+
 ## 仓库结构
 
 | 路径 | 内容 |
@@ -45,6 +63,9 @@
 | `pof/` | CPLD 固件，分别对应 RTC / 震动版本 |
 | `mcu/` | RTC 版本使用的 MCU 固件 |
 | `picture/` | 项目图片与展示素材 |
+| `docs/` | 项目文档中心、装配说明、授权说明、测试说明 |
+| `hardware/` | 未来硬件源码 / 发布物的规范化结构说明 |
+| `firmware/` | 未来固件源码 / 发布物的规范化结构说明 |
 
 ## 模式说明
 
@@ -86,6 +107,7 @@
 
 - 本项目开放 `PCB` 与固件下载，欢迎个人制作、学习研究和社区交流。
 - 仓库当前附带许可证文件：[GPL-3.0](LICENSE)
+- 为避免 README 中的口径与许可证文件脱节，仓库新增了 [NOTICE.md](NOTICE.md) 与 [docs/licensing.md](docs/licensing.md) 来说明当前公开信息的整理方式。
 - 根据原说明，个人卖家售卖时请保留以下鸣谢字样：
 
 ```text
@@ -93,6 +115,8 @@
 ```
 
 - 如需商业化，请先联系 `兜鬼巨神兵（CQZ）` 获取授权。
+
+> 说明：本页用于帮助 GitHub 访客理解项目现状，不替代 `LICENSE` 原文，也不构成法律意见。
 
 ## 社群与相关链接
 
